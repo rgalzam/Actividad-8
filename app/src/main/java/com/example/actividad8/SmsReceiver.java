@@ -1,4 +1,6 @@
-/*import android.content.BroadcastReceiver;
+package com.example.actividad8;
+
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,17 +23,16 @@ public class SmsReceiver extends BroadcastReceiver {
                     String sender = smsMessage.getDisplayOriginatingAddress();
                     String messageBody = smsMessage.getMessageBody();
 
-                    // Obtener la lista de números de MainActivity
+                    // Obtener la lista de números
                     MainActivity mainActivity = new MainActivity();
                     ArrayList<String> phoneNumbers = mainActivity.getPhoneNumbers();
 
                     // Verifica si el número está en la lista
                     if (phoneNumbers.contains(sender)) {
-                        // Muestra una notificación
                         Toast.makeText(context, "Nuevo mensaje de: " + sender, Toast.LENGTH_LONG).show();
                     }
                 }
             }
         }
     }
-}*/
+}
