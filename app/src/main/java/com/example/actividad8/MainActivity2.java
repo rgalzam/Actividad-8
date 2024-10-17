@@ -1,6 +1,7 @@
 package com.example.actividad8;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -19,6 +20,8 @@ public class MainActivity2 extends AppCompatActivity {
     private EditText messageEditText;
     private Button sendButton;
 
+    private Button backButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +35,8 @@ public class MainActivity2 extends AppCompatActivity {
         messageEditText = findViewById(R.id.message_edit_text);
         sendButton = findViewById(R.id.send_button);
 
+        backButton = findViewById(R.id.backButton);
+
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,6 +44,11 @@ public class MainActivity2 extends AppCompatActivity {
                 String message = messageEditText.getText().toString();
                 sendSms(phoneNumber, message);
             }
+        });
+
+        backButton.setOnClickListener(view ->{
+            Intent myIntent = new Intent(MainActivity2.this, MainActivity.class);
+            startActivity(myIntent);
         });
     }
 
